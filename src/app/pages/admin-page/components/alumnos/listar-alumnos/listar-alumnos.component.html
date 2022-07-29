@@ -1,0 +1,52 @@
+<!-- <h3>Filtros</h3>
+<button class="btn btn-light me-3" (click)="setAgeFilter(0, 100)">Todos</button>
+<button class="btn btn-light me-3" (click)="setAgeFilter(17, 100)">Mayores</button>
+<button class="btn btn-light" (click)="setAgeFilter(0, 18)">Menores</button> -->
+
+<h2 class="mt-5">Lista de Alumnos</h2>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="listaDeAlumnos.length === 0">
+      <th scope="row">-</th>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <ng-container *ngFor="let alumno of listaDeAlumnos; let i = index">
+      <tr
+        style="cursor: inherit"
+        *ngIf="alumno.edad > ageFilterMin && alumno.edad < ageFilterMax">
+        <th
+          scope="row"
+          data-bs-toggle="modal"
+          data-bs-target="#editarAlumnoModal">
+          {{ alumno.id }}
+        </th>
+        <td data-bs-toggle="modal" data-bs-target="#editarAlumnoModal">
+          {{ alumno.nombre }}
+        </td>
+        <td data-bs-toggle="modal" data-bs-target="#editarAlumnoModal">
+          {{ alumno.apellido }}
+        </td>
+        <td data-bs-toggle="modal" data-bs-target="#editarAlumnoModal">
+          {{ alumno.edad }}
+        </td>
+        <td>
+          <button class="btn btn-info" (click)="show(alumno.id)">Ver</button>
+          <button class="btn btn-light" (click)="editAlumno(alumno)">Editar</button>
+          <button class="btn btn-danger" (click)="delete(alumno.id)">Borrar</button>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

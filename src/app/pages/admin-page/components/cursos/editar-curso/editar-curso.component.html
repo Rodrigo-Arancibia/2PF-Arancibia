@@ -1,0 +1,25 @@
+<form [formGroup]="formulario" (ngSubmit)="editarCurso($event)">
+  <div class="mb-3">
+    Nombre:
+    <input type="text" formControlName="nombre" />
+  </div>
+
+  <div class="text-danger ml-3 justify-content-end" *ngIf="this.formulario.get('nombre')?.errors?.['minlength']">
+    Minimo 4 caracteres.
+  </div>
+
+  <div class="text-danger ml-3 justify-content-end" *ngIf="this.formulario.get('nombre')?.errors?.['required']&&
+      this.formulario.get('nombre')?.touched">Campo requerido.
+  </div>
+
+  <div class="mb-3">
+    Inscripciones: <input type="text" formControlName="inscripciones" />
+  </div>
+
+  <div class="text-danger ml-3 justify-content-end" *ngIf="this.formulario.get('inscripciones')?.errors?.['required']&&
+      this.formulario.get('inscripciones')?.touched">Campo requerido.
+  </div>
+
+  <button type="submit" class="btn btn-light">Crear</button>
+
+</form>

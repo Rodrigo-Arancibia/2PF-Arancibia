@@ -1,0 +1,39 @@
+<h2 class="mt-5">Lista de inscripciones</h2>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Alumno</th>
+      <th scope="col">Curso</th>
+      <th scope="col">Date</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let inscripcion of listaDeInscripciones; let i = index">
+      <tr
+        style="cursor: inherit">
+        <th
+          scope="row"
+          data-bs-toggle="modal"
+          data-bs-target="#listarInscripcionModal">
+          {{ inscripcion.id }}
+        </th>
+        <td data-bs-toggle="modal" data-bs-target="#listarInscripcionModal">
+          {{ inscripcion?.alumnoInfo?.nombre }}
+        </td>
+        <td data-bs-toggle="modal" data-bs-target="#listarInscripcionModal">
+          {{ inscripcion?.cursoInfo?.nombre }}
+        </td>
+        <td data-bs-toggle="modal" data-bs-target="#listarInscripcionModal">
+          {{ inscripcion.formatedDate }}
+        </td>
+        <td>
+          <button class="btn btn-info">Ver</button>  <!-- (click)="show(inscripcion.id)" -->
+          <button class="btn btn-light">Editar</button> <!-- (click)="editInscripcion(inscripcion)" -->
+          <button class="btn btn-danger">Borrar</button> <!-- (click)="delete(inscripcion.id)" -->
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

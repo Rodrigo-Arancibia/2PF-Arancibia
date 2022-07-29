@@ -1,0 +1,22 @@
+<form
+  class="d-flex flex-column"
+  [formGroup]="formulario"
+  (ngSubmit)="submit()">
+
+  <div class="mb-3">
+    <span [ngClass]="{'text-danger': formulario.get('legajo')?.invalid}"> Legajo: * </span>
+    <input type="text" formControlName="legajo" required>
+    <span *ngIf="this.formulario.get('legajo')?.errors?.['required']"> (El legajo no puede quedar vacío)</span>
+  </div>
+
+  <div class="mb-3">
+    <span [ngClass]="{'text-danger': formulario.get('contraseña')?.invalid}"> Contraseña: * </span>
+    <input type="contraseña" formControlName="contraseña">
+    <span *ngIf="this.formulario.get('contraseña')?.errors?.['required']">(La contraseña no puede quedar vacía)</span>
+  </div>
+
+  <div class="mb-3">
+    <button type="submit" class="btn" [ngClass]="formulario.invalid ? 'btn-primary disabled' : 'btn-primary'"> Confirmar</button>
+  </div>
+
+</form>

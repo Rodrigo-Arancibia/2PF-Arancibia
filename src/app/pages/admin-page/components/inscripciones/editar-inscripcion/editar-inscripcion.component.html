@@ -1,0 +1,21 @@
+<form [formGroup]="formulario" (ngSubmit)="editarCurso($event)">
+  <div class="mb-3">
+    IdAlumno:
+    <input type="number" formControlName="idAlumno" />
+  </div>
+
+  <div class="text-danger ml-3 justify-content-end" *ngIf="this.formulario.get('idAlumno')?.errors?.['required']&&
+      this.formulario.get('idAlumno')?.touched">Campo requerido.
+  </div>
+
+  <div class="mb-3">
+    IdCurso: <input type="number" formControlName="idCurso" />
+  </div>
+
+  <div class="text-danger ml-3 justify-content-end" *ngIf="this.formulario.get('idCurso')?.errors?.['required']&&
+      this.formulario.get('idCurso')?.touched">Campo requerido.
+  </div>
+
+  <button type="submit" class="btn btn-light">Crear</button>
+
+</form>
