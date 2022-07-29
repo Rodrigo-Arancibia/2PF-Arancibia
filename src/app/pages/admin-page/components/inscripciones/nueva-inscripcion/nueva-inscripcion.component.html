@@ -1,0 +1,21 @@
+<form [formGroup]="formulario" (ngSubmit)="agregarInscripcion()">
+  <h3 class="mb-5">{{inscripcionToEdit && inscripcionToEdit.id ? 'Editar Inscripcion' : 'Nueva Inscripcion'}}</h3>
+  <div>
+    Alumno: <input type="text" formControlName="idAlumno"/>
+  </div>
+
+  <div class="text-danger ml-3 justify-content-end" *ngIf="this.formulario.get('idAlumno')?.errors?.['required']&&
+    this.formulario.get('idAlumno')?.touched">Campo requerido.
+  </div>
+
+  <div>
+    Curso: <input type="text" formControlName="idCurso"/>
+  </div>
+
+  <div class="text-danger ml-3 justify-content-end" *ngIf="this.formulario.get('idCurso')?.errors?.['required']&&
+    this.formulario.get('idCurso')?.touched">Campo requerido.
+  </div>
+
+  <button type="submit" class="btn btn-light">{{inscripcionToEdit && inscripcionToEdit.id ? 'Editar' : 'Crear'}}</button>
+  <!-- <button *ngIf="cursoToEdit && cursoToEdit.id" type="submit" class="btn btn-light" (click)="salirDeEdicion()">Salir de edicion</button> -->
+</form>

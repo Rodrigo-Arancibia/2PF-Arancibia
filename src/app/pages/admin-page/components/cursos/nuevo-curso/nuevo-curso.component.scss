@@ -1,0 +1,15 @@
+form {
+  max-width: 300px;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    input {
+      border-radius: 5px;
+      padding-left: 5px;
+      box-shadow: 5px 5px 10px #0a000ff5;
+    }
+  }
+}

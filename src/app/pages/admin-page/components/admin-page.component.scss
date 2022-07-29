@@ -1,0 +1,18 @@
+:host {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidePanelCont {
+    background: rgb(30, 0, 62);
+    background: linear-gradient(135deg, rgba(30, 0, 62, 1) 0%, rgba(15, 3, 28, 1) 35%, rgba(35, 8, 64, 1) 100%);
+    color: white;
+  }
+  
+  .mainCont {
+    background: rgb(88, 41, 113);
+    background: linear-gradient(90deg, rgba(88, 41, 113, 1) 0%, rgba(147, 51, 196, 1) 35%, rgba(64, 26, 84, 1) 100%);
+    color: white;
+  }
+  
