@@ -1,0 +1,46 @@
+<div class="main">
+  <hr />
+  <app-nuevo-curso (addCurso)="newCurso($event)" [cursoToEdit]="cursoToEdit"></app-nuevo-curso>
+  <hr />
+  <app-listar-cursos
+    [listaDeCursos]="cursos"
+    (onClickCurso)="setearCursoAModificar($event)"
+    (onDeleteCurso)="deleteCurso($event)"
+  ></app-listar-cursos>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="editarCursoModal"
+  tabindex="-1"
+  aria-labelledby="editarCursoModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-danger" id="editarCursoModalLabel">
+          Modificar Curso
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body text-danger"></div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-warning"
+          #closeModal
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

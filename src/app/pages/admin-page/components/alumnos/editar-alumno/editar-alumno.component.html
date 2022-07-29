@@ -1,0 +1,40 @@
+<form [formGroup]="formulario" (ngSubmit)="editarAlumno($event)">
+  <div class="mb-3">
+    Nombre:
+    <input type="text" formControlName="nombre" />
+  </div>
+
+  <div class="text-danger ml-3 justify-content-end" *ngIf="this.formulario.get('nombre')?.errors?.['minlength']">
+    Minimo 4 caracteres.
+  </div>
+
+  <div class="text-danger ml-3 justify-content-end" *ngIf="this.formulario.get('nombre')?.errors?.['required']&&
+      this.formulario.get('nombre')?.touched">Campo requerido.
+  </div>
+
+  <div class="mb-3">
+    Apellido: <input type="text" formControlName="apellido" />
+  </div>
+
+  <div class="text-danger ml-3 justify-content-end" *ngIf="this.formulario.get('apellido')?.errors?.['minlength']">
+    Minimo 4 caracteres.
+  </div>
+
+  <div class="text-danger ml-3 justify-content-end" *ngIf="this.formulario.get('apellido')?.errors?.['required']&&
+      this.formulario.get('apellido')?.touched">Campo requerido.
+  </div>
+
+  <div class="mb-3">Edad:<input type="number" formControlName="edad" /></div>
+
+  <div class="text-danger ml-3 justify-content-end ng-touched" *ngIf="
+        this.formulario.get('edad')?.errors?.['required'] &&
+        this.formulario.get('edad')?.touched">Campo requerido.
+  </div>
+
+  <div class="text-danger ml-3 justify-content-end" *ngIf="this.formulario.get('edad')?.errors?.['min']">
+    Edad no puede ser menor a 10.
+  </div>
+
+  <button type="submit" class="btn btn-light">Crear</button>
+
+</form>

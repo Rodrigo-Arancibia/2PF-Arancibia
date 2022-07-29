@@ -1,0 +1,17 @@
+<form [formGroup]="formulario" (ngSubmit)="agregarCurso()">
+  <h3 class="mb-5">{{cursoToEdit && cursoToEdit.id ? 'Editar Curso' : 'Nuevo Curso'}}</h3>
+  <div>
+    Nombre: <input type="text" formControlName="nombre"/>
+  </div>
+
+  <div class="text-danger ml-3 justify-content-end" *ngIf="this.formulario.get('nombre')?.errors?.['minlength']">
+    Minimo 4 caracteres.
+  </div>
+
+  <div class="text-danger ml-3 justify-content-end" *ngIf="this.formulario.get('nombre')?.errors?.['required']&&
+    this.formulario.get('nombre')?.touched">Campo requerido.
+  </div>
+
+  <button type="submit" class="btn btn-light">{{cursoToEdit && cursoToEdit.id ? 'Editar' : 'Crear'}}</button>
+  <!-- <button *ngIf="cursoToEdit && cursoToEdit.id" type="submit" class="btn btn-light" (click)="salirDeEdicion()">Salir de edicion</button> -->
+</form>

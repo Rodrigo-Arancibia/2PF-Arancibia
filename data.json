@@ -1,0 +1,79 @@
+{
+  "alumnos": [
+    {
+      "id": 1,
+      "nombre": "Rodrigo",
+      "apellido": "Arancibia",
+      "edad": 30,
+      "inscripciones": [1, 2, 3]
+    },
+    {
+      "id": 2,
+      "nombre": "Juan",
+      "apellido": "Perez",
+      "edad": 28,
+      "inscripciones": [4, 2, 5]
+    },
+    {
+      "id": 3,
+      "nombre": "Nicolas",
+      "apellido": "Ramirez",
+      "edad": 25,
+      "inscripciones": [1, 15, 16]
+    }
+  ],
+  "inscripciones": [
+    {
+      "id": 1,
+      "idAlumno": 1,
+      "idCurso": 1,
+      "fecha": "20/01/20"
+    },
+    {
+      "id": 2,
+      "idAlumno": 2,
+      "idCurso": 1,
+      "fecha": "20/01/20"
+    },
+    {
+      "id": 3,
+      "idAlumno": 3,
+      "idCurso": 1,
+      "fecha": "20/01/20"
+    },
+    {
+      "id": 4,
+      "idAlumno": 4,
+      "idCurso": 2,
+      "fecha": "20/01/20"
+    },
+    {
+      "id": 5,
+      "idAlumno": 5,
+      "idCurso": 2,
+      "fecha": "20/01/20"
+    }
+  ],
+  "cursos": [
+    {
+      "id": 1,
+      "nombre": "javascript course",
+      "inscripciones": [1, 2, 3]
+    },
+    {
+      "id": 2,
+      "nombre": "node course",
+      "inscripciones": [1, 4]
+    },
+    {
+      "id": 3,
+      "nombre": "html course",
+      "inscripciones": [5]
+    },
+    {
+      "id": 4,
+      "nombre": "css course",
+      "inscripciones": [5]
+    }
+  ]
+}
